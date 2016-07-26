@@ -3,7 +3,7 @@
 	$menucolor = get_post_meta( $post->ID, 'menucolor', true );
 	?>
 
-<main class="featured<?php echo ' '.$menucolor; ?>">
+<main class="featured<?php echo ' ' . esc_attr( $menucolor ); ?>">
 
 <button id="reload"></button>
 
@@ -34,17 +34,14 @@
 				'suppress_filters' => true,
 			);
 
-				$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
-foreach ( $recent_posts as $recent ) {
-		echo '<li><a href="' . get_permalink( $recent['ID'] ) . '" title="'.esc_attr( $recent['post_title'] ).'" >' .   $recent['post_title'].'</a> </li> ';
-}
+			$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+			foreach ( $recent_posts as $recent ) {
+				echo '<li><a href="' . get_permalink( $recent['ID'] ) . '" title="'.esc_attr( $recent['post_title'] ).'" >' . wp_kses_post( $recent['post_title'] ) . '</a> </li> ';
+			}
 			?>
 			</ul>
 			</menu>
 		</button>
 	</nav>
-	
 </header>
-
-
 </main>
