@@ -17,12 +17,13 @@
 				'tag' => 'featured',
 				'orderby' => 'post_date',
 				'order' => 'DESC',
-				'suppress_filters' => true );
+				'suppress_filters' => true,
+);,
 
 				$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
-				foreach( $recent_posts as $recent ){
-					echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-					}
+foreach ( $recent_posts as $recent ) {
+	echo '<li><a href="' . get_permalink( $recent['ID'] ) . '" title="'.esc_attr( $recent['post_title'] ).'" >' .   $recent['post_title'].'</a> </li> ';
+}
 			?>
 			</ul>
 			</menu>
@@ -47,7 +48,8 @@
 	'post_mime_type'   => '',
 	'post_parent'      => '',
 	'post_status'      => 'publish',
-	'suppress_filters' => true ); ?>
+	'suppress_filters' => true,
+); ,?>
 
 <?php $posts_array = get_posts( $args ); ?> 
 

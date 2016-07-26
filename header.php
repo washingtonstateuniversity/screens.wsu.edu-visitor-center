@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 
 	<!-- TITLE -->
-	<title><?php wp_title(''); ?></title>
+	<title><?php wp_title( '' ); ?></title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	

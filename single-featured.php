@@ -1,9 +1,9 @@
 <?php // SETUP VARIABLES
 	$format = get_post_format();
-	$menucolor = get_post_meta($post->ID, 'menucolor', TRUE);
+	$menucolor = get_post_meta( $post->ID, 'menucolor', true );
 	?>
 
-<main class="featured<?php echo " ".$menucolor; ?>">
+<main class="featured<?php echo ' '.$menucolor; ?>">
 
 <button id="reload"></button>
 
@@ -31,12 +31,13 @@
 				'orderby' => 'post_date',
 				'order' => 'DESC',
 				'post_status' => 'publish',
-				'suppress_filters' => true );
+				'suppress_filters' => true,
+);,
 
 				$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
-				foreach( $recent_posts as $recent ){
-						echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-						}
+foreach ( $recent_posts as $recent ) {
+		echo '<li><a href="' . get_permalink( $recent['ID'] ) . '" title="'.esc_attr( $recent['post_title'] ).'" >' .   $recent['post_title'].'</a> </li> ';
+}
 			?>
 			</ul>
 			</menu>
