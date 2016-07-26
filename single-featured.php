@@ -17,7 +17,7 @@
 <header>
 	
 	<nav>
-		<?php if ( $format == 'video' && $videolink != '' ) : ?>
+		<?php if ( 'video' === $format && '' !== $videolink ) : ?>
 			<button id="pauseplay" class="play ss-pause"></button>
 			<button id="mute" class="unmuted ss-highvolume"></button>
 		<?php endif; ?>

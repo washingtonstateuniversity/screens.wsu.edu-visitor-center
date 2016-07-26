@@ -4,7 +4,7 @@
 <header>
 	
 	<nav>
-		<?php if ( $format == 'video' && $videolink != '' ) : ?>
+		<?php if ( 'video' === $format && '' !== $videolink ) : ?>
 			<button id="pauseplay" class="play ss-pause"></button>
 			<button id="mute" class="unmuted ss-highvolume"></button>
 		<?php endif; ?>
@@ -33,7 +33,8 @@ foreach ( $recent_posts as $recent ) {
 	</nav>
 </header>
 
-<?php $args = array(
+<?php
+$args = array(
 	'posts_per_page'   => 1,
 	'offset'           => 0,
 	'category'         => '',
@@ -49,7 +50,8 @@ foreach ( $recent_posts as $recent ) {
 	'post_parent'      => '',
 	'post_status'      => 'publish',
 	'suppress_filters' => true,
-); ,?>
+);
+?>
 
 <?php $posts_array = get_posts( $args ); ?> 
 
