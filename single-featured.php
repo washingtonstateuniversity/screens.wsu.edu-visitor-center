@@ -32,7 +32,7 @@
 				'order' => 'DESC',
 				'post_status' => 'publish',
 				'suppress_filters' => true,
-);,
+			);
 
 				$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 foreach ( $recent_posts as $recent ) {
