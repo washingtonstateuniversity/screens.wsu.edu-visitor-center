@@ -18,7 +18,7 @@
 				'orderby' => 'post_date',
 				'order' => 'DESC',
 				'suppress_filters' => true,
-);,
+			);
 
 				$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 foreach ( $recent_posts as $recent ) {
