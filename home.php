@@ -1,15 +1,20 @@
-<?php get_header(); ?>
-<?php  ?>
+<?php
+
+get_header();
+
+?>
 
 <main class="home">
 
 <button id="reload"></button>
 
-<?php $args = array(
+<?php
+
+$args = array(
 	'posts_per_page'   => 1,
 	'offset'           => 0,
 	'category'         => '',
-	'tag'			   => 'home',
+	'tag'              => 'home',
 	'orderby'          => 'post_date',
 	'order'            => 'DESC',
 	'post_type'        => 'post',
@@ -17,15 +22,16 @@
 	'post_status'      => 'publish',
 	'suppress_filters' => true,
 );
-?>
 
-<?php $posts_home = get_posts( $args );
+$posts_home = get_posts( $args );
+$menucolor = '';
 
 foreach ( $posts_home as $post ) : setup_postdata( $post );
 	$menucolor = get_post_meta( $post->ID, 'menucolor', true );
 	get_template_part( 'content', get_post_format() );
-	endforeach;
-	wp_reset_postdata();
+endforeach;
+wp_reset_postdata();
+
 ?>
 
 <header>
