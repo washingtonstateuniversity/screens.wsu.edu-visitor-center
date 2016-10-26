@@ -36,4 +36,3 @@ before_script:
 
 script:
   - grunt phpcs
-  - grunt default

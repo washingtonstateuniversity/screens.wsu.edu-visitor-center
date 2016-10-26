@@ -1,12 +1,12 @@
 {
   "name": "screens.wsu.edu-visitor-center",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/washingtonstateuniversity/screens.wsu.edu-visitor-center"
   },
   "devDependencies": {
     "grunt": "~1.0.1",
-    "grunt-phpcs": "^0.4.0",
+    "grunt-phpcs": "^0.4.0"
   }
 }
