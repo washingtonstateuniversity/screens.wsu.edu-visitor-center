@@ -1,22 +1,25 @@
-<?php // SETUP VARIABLES
-	$format = get_post_format();
-	$menucolor = get_post_meta( $post->ID, 'menucolor', true );
-	?>
+<?php
+
+$format = get_post_format();
+$menucolor = get_post_meta( get_post()->ID, 'menucolor', true );
+
+?>
 
 <main class="featured<?php echo ' ' . esc_attr( $menucolor ); ?>">
 
 <button id="reload"></button>
 
+<?php
 
-<?php while ( have_posts() ) : the_post(); ?>
+while ( have_posts() ) : the_post();
+	get_template_part( 'content', get_post_format() );
+endwhile; // end of the loop.
 
-<?php get_template_part( 'content', get_post_format() ); ?>
-
-<?php endwhile; // end of the loop. ?>
+?>
 
 <header>
 	<nav>
-		<?php if ( 'video' === $format && '' !== $videolink ) : ?>
+		<?php if ( 'video' === $format ) : ?>
 			<button id="pauseplay" class="play ss-pause"></button>
 			<button id="mute" class="unmuted ss-highvolume"></button>
 		<?php endif; ?>
