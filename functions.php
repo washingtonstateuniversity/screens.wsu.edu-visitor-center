@@ -10,5 +10,5 @@ function screens_vc_enqueue_scripts() {
 	wp_enqueue_style( 'video-js', 'https://vjs.zencdn.net/5.8/video-js.min.css' );
 
 	wp_enqueue_script( 'video-js', 'https://vjs.zencdn.net/5.8/video.min.js', array( 'jquery', 'jquery-ui-core' ), false, false );
-	wp_enqueue_script( 'screens-js', get_template_directory_uri() . '/repo/js/scripts.js', array( 'video-js' ), false, true );
+	wp_enqueue_script( 'screens-js', get_template_directory_uri() . '/repo/js/scripts.min.js', array( 'video-js' ), false, true );
 }
