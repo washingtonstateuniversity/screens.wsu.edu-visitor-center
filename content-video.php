@@ -2,8 +2,17 @@
 $videolink = get_post_meta( $post->ID, 'video', true );
 $youtube = get_post_meta( $post->ID, 'youtube', true );
 $audiolevel = get_post_meta( $post->ID, 'audiolevel', true );
+
 if ( '' === $audiolevel ) { $audiolevel = '.3';  }
-if ( has_tag( 'home' ) ) { $loop = ' loop'; $ytloop = '&loop=1'; } else { $loop = ''; $ytloop = ''; };
+
+if ( has_tag( 'home' ) ) {
+	$loop = ' loop';
+	$ytloop = '&loop=1';
+} else {
+	$loop = '';
+	$ytloop = '';
+};
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
