@@ -52,7 +52,7 @@
 				if ( video.paused ) {
 					window.setInterval( function() {
 						if ( video.paused ) {
-							window.location = "/walls/";
+							window.location = "/visitorcenter/";
 						}
 					}, 10000 );
 				}
