@@ -15,8 +15,8 @@ if ( has_tag( 'home' ) ) { $loop = ' loop'; $ytloop = '&loop=1'; } else { $loop 
 	</video>
 
 	<script>
-	if ($('video').length) {
-		$('video').get(0).volume = <?php echo $audiolevel; ?>;
+	if ( jQuery( "video" ).length ) {
+		jQuery( "video" ).get( 0 ).volume = <?php echo esc_js( $audiolevel ); ?>;
 		}
 	</script>
 
