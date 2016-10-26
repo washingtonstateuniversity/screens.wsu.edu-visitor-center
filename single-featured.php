@@ -15,7 +15,6 @@
 <?php endwhile; // end of the loop. ?>
 
 <header>
-	
 	<nav>
 		<?php if ( 'video' === $format && '' !== $videolink ) : ?>
 			<button id="pauseplay" class="play ss-pause"></button>
@@ -24,7 +23,8 @@
 		<button id="menu" class="closed touchy">
 			<menu>
 			<ul id="featured">
-			<?php $args = array(
+			<?php
+			$args = array(
 				'numberposts' => 10,
 				'offset' => 0,
 				'tag' => 'featured',
@@ -36,7 +36,7 @@
 
 			$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 			foreach ( $recent_posts as $recent ) {
-				echo '<li><a href="' . get_permalink( $recent['ID'] ) . '" title="'.esc_attr( $recent['post_title'] ).'" >' . wp_kses_post( $recent['post_title'] ) . '</a> </li> ';
+				echo '<li><a href="' . get_permalink( $recent['ID'] ) . '" title="' . esc_attr( $recent['post_title'] ) . '" >' . wp_kses_post( $recent['post_title'] ) . '</a> </li> ';
 			}
 			?>
 			</ul>

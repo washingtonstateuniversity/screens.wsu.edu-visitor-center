@@ -44,7 +44,7 @@ foreach ( $posts_home as $post ) : setup_postdata( $post );
 		);
 		$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 		foreach ( $recent_posts as $recent ) {
-			echo '<li><a href="' . get_permalink( $recent['ID'] ) . '" title="'.esc_attr( $recent['post_title'] ).'" >' . wp_kses_post( $recent['post_title'] ) . '</a> </li> ';
+			echo '<li><a href="' . get_permalink( $recent['ID'] ) . '" title="' . esc_attr( $recent['post_title'] ) . '" >' . wp_kses_post( $recent['post_title'] ) . '</a> </li> ';
 		}
 		?>
 		</ul>
