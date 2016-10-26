@@ -15,29 +15,37 @@
 	'post_type'        => 'post',
 	'post_parent'      => '',
 	'post_status'      => 'publish',
-	'suppress_filters' => true );
+	'suppress_filters' => true,
+);
 ?>
 
 <?php $posts_home = get_posts( $args );
-	
-	foreach ( $posts_home as $post ) : setup_postdata( $post );
-	$menucolor = get_post_meta($post->ID, 'menucolor', TRUE);
-		get_template_part( 'content', get_post_format() );
-	endforeach; 
+
+foreach ( $posts_home as $post ) : setup_postdata( $post );
+	$menucolor = get_post_meta( $post->ID, 'menucolor', true );
+	get_template_part( 'content', get_post_format() );
+	endforeach;
 	wp_reset_postdata();
 ?>
 
 <header>
-<nav class="<?php echo " ".$menucolor; ?>">
+<nav class="<?php echo ' ' . esc_attr( $menucolor ); ?>">
 	<button id="menu" class="closed touchy">
 		<menu>
 		<ul id="featured">
-		<?php $args = array(
-			'numberposts' => 10, 'offset' => 0, 'tag' => 'featured', 'orderby' => 'post_date', 'order' => 'DESC', 'suppress_filters' => true );
-			$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
-			foreach( $recent_posts as $recent ){
-				echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-				}
+		<?php
+		$args = array(
+			'numberposts' => 10,
+			'offset' => 0,
+			'tag' => 'featured',
+			'orderby' => 'post_date',
+			'order' => 'DESC',
+			'suppress_filters' => true,
+		);
+		$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+		foreach ( $recent_posts as $recent ) {
+			echo '<li><a href="' . get_permalink( $recent['ID'] ) . '" title="' . esc_attr( $recent['post_title'] ) . '" >' . wp_kses_post( $recent['post_title'] ) . '</a> </li> ';
+		}
 		?>
 		</ul>
 		</menu>
@@ -48,4 +56,4 @@
 
 </main>
 
-<?php get_footer(); ?>
+<?php get_footer();

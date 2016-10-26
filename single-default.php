@@ -5,7 +5,7 @@
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
-			
+
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
@@ -19,7 +19,6 @@
 		?>
 	</div><!-- .entry-content -->
 
-	
 </article><!-- #post-## -->
 
-<?php endwhile; // end of the loop. ?>
+<?php endwhile; // end of the loop.

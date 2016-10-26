@@ -44,7 +44,7 @@ get_header();
 				<div class="entry-content">
 					<div class="entry-attachment">
 						<div class="attachment">
-							<?php wall_the_attached_image(); ?>
+
 						</div><!-- .attachment -->
 
 						<?php if ( has_excerpt() ) : ?>
@@ -65,8 +65,8 @@ get_header();
 
 				<footer class="entry-meta">
 					<?php
-						if ( comments_open() && pings_open() ) : // Comments and trackbacks open
-							printf( __( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'wall' ), esc_url( get_trackback_url() ) );
+					if ( comments_open() && pings_open() ) : // Comments and trackbacks open
+						printf( __( '<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'wall' ), esc_url( get_trackback_url() ) );
 						elseif ( ! comments_open() && pings_open() ) : // Only trackbacks open
 							printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'wall' ), esc_url( get_trackback_url() ) );
 						elseif ( comments_open() && ! pings_open() ) : // Only comments open
@@ -82,8 +82,8 @@ get_header();
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() )
-					comments_template();
+			if ( comments_open() || '0' != get_comments_number() ) {
+				comments_template(); }
 			?>
 
 		<?php endwhile; // end of the loop. ?>

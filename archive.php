@@ -17,8 +17,8 @@ get_header(); ?>
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
-						if ( is_category() ) :
-							single_cat_title();
+					if ( is_category() ) :
+						single_cat_title();
 
 						elseif ( is_tag() ) :
 							single_tag_title();
@@ -48,7 +48,7 @@ get_header(); ?>
 							_e( 'Asides', 'wall' );
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'wall');
+							_e( 'Images', 'wall' );
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
 							_e( 'Videos', 'wall' );
@@ -68,8 +68,8 @@ get_header(); ?>
 				<?php
 					// Show an optional term description.
 					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
+				if ( ! empty( $term_description ) ) :
+					printf( '<div class="taxonomy-description">%s</div>', $term_description );
 					endif;
 				?>
 			</header><!-- .page-header -->
@@ -86,8 +86,6 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
-
-			<?php wall_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>
 
