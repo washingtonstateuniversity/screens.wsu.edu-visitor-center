@@ -1,17 +1,16 @@
-module.exports = function(grunt) {
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+module.exports = function( grunt ) {
+    grunt.initConfig( {
+        pkg: grunt.file.readJSON( "package.json" ),
 
         phpcs: {
             plugin: {
-                src: './'
+                src: "./"
             },
             options: {
                 bin: "vendor/bin/phpcs --extensions=php --ignore=\"*/vendor/*,*/node_modules/*\"",
                 standard: "phpcs.ruleset.xml"
             }
         },
-
 
         jscs: {
             scripts: {
@@ -63,7 +62,7 @@ module.exports = function(grunt) {
             }
         }
 
-    });
+    } );
 
 	grunt.loadNpmTasks( "grunt-phpcs" );
 	grunt.loadNpmTasks( "grunt-jscs" );
