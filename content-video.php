@@ -31,7 +31,7 @@ if ( has_tag( 'home' ) ) {
 
 <?php } elseif ( '' !== $youtube ) { ?>
 
-<iframe width="1920" height="1080" src="//www.youtube.com/embed/<?php echo esc_attr( get_post_meta( $post->ID, 'youtube', true ) ); ?>?version=3&enablejsapi=1&rel=0&showinfo=0&autoplay=1&controls=0&html5=1<?php echo $ytloop; ?>&volume=100" frameborder="0"  scrolling="yes" allowfullscreen></iframe>
+<iframe width="1920" height="1080" src="//www.youtube.com/embed/<?php echo esc_attr( get_post_meta( $post->ID, 'youtube', true ) ); ?>?version=3&enablejsapi=1&rel=0&showinfo=0&autoplay=1&controls=0&html5=1<?php echo $ytloop; ?>" frameborder="0"  scrolling="yes" allowfullscreen></iframe>
 
 <?php } ?>
 
